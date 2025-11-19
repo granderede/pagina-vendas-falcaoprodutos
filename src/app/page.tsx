@@ -1,10 +1,18 @@
 "use client";
 
-import { Check, TrendingUp, Shield, Zap, Star, Clock, Target, DollarSign } from "lucide-react";
+import { Check, TrendingUp, Shield, Zap, Star, Clock, Target, DollarSign, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 export default function FalcaoMetodos() {
+  const handleCheckout = () => {
+    window.location.href = "https://app.monetizze.com.br/checkout/DXP365721";
+  };
+
+  const handleWhatsApp = () => {
+    window.open("https://wa.me/5554999934232", "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Section - SIMPLIFICADO E ORGANIZADO */}
@@ -47,6 +55,7 @@ export default function FalcaoMetodos() {
             {/* CTA Único e Forte */}
             <div className="pt-4">
               <Button 
+                onClick={handleCheckout}
                 size="lg" 
                 className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold text-lg px-12 py-7 rounded-xl shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105"
               >
@@ -325,6 +334,7 @@ export default function FalcaoMetodos() {
               </div>
 
               <Button 
+                onClick={handleCheckout}
                 size="lg" 
                 className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-bold text-xl px-12 py-8 rounded-xl shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105"
               >
@@ -360,11 +370,23 @@ export default function FalcaoMetodos() {
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-2xl font-bold text-white mb-2">FalcãoMétodos</h3>
           <p className="text-base text-gray-400 mb-4">Por Falcão dos Métodos</p>
-          <p className="text-sm text-gray-500 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-500 max-w-2xl mx-auto mb-6">
             © 2024 FalcãoMétodos. Todos os direitos reservados. 
             Este produto não garante lucros e os resultados podem variar. 
             Aposte com responsabilidade.
           </p>
+          
+          {/* WhatsApp de Suporte */}
+          <div className="flex items-center justify-center gap-2 text-emerald-400">
+            <MessageCircle className="w-5 h-5" />
+            <span className="text-base font-medium">Suporte WhatsApp:</span>
+            <button 
+              onClick={handleWhatsApp}
+              className="text-base font-bold hover:text-emerald-300 transition-colors underline"
+            >
+              (54) 99993-4232
+            </button>
+          </div>
         </div>
       </footer>
     </div>
